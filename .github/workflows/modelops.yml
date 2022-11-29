@@ -16,3 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: hello-world
       run: echo "hello world workflows …"
+    - name: run model 
+      run: python linear-model.py
