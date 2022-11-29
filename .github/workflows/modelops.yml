@@ -13,5 +13,6 @@ jobs:
     container: adsoft/aiops:latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: hello-world
       run: echo "hello world workflows …"
