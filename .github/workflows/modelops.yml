@@ -1,0 +1,17 @@
+name: Modelops deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container: adsoft/aiops:latest
+
+    steps:
+    - name: hello-world
+      run: echo "hello world workflows …"
