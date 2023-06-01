@@ -20,12 +20,14 @@ jobs:
 #      run: python linear-model.py
     - name: Download model
       run: wget -O car-truck-model.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/car-truck-resnet.zip?alt=media&token=d0a593c0-578b-4429-99a4-23b629b56545
+    - name: extract model
+      run: unzip car-truck-model.zip
     - name: show dir
       run: ls -la
 
     - name: docker login
       env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_USER: ${{secrets.DOCKER_USER_X}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         
       run: |
