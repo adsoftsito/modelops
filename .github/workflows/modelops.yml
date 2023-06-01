@@ -19,7 +19,7 @@ jobs:
 #    - name: run model 
 #      run: python linear-model.py
     - name: Download model
-      run: wget -O ${{secrets.MODEL_NAME}} https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/car-truck-resnet.zip?alt=media&token=d0a593c0-578b-4429-99a4-23b629b56545
+      run: wget -O car-truck-model.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/car-truck-resnet.zip?alt=media&token=d0a593c0-578b-4429-99a4-23b629b56545
     - name: show dir
       run: ls -la
 
