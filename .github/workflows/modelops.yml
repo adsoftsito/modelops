@@ -23,7 +23,7 @@ jobs:
     - name: extract model
       run: unzip car-truck-resnet.zip
     - name: show dir
-      run: ls -la
+      run: ls -la car-truck-resnet
 
     - name: docker login
       env:
