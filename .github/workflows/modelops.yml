@@ -21,7 +21,7 @@ jobs:
     - name: Download model
       run: wget -O car-truck-resnet.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/car-truck-resnet.zip?alt=media&token=d0a593c0-578b-4429-99a4-23b629b56545
     - name: extract model
-      run: unzip car-truck-resnet.zip -d car-truck-resnet
+      run: unzip car-truck-resnet.zip
     - name: show dir
       run: ls -la
 
