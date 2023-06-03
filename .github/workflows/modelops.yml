@@ -21,7 +21,7 @@ jobs:
     - name: Download model
       run: wget -O cat-dog.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/cat-dog.zip?alt=media&token=cfd82025-2d27-40ae-947d-6302e389dc49
     - name: extract model
-      run: unzip cat-dog.zip -d cat-dog
+      run: unzip cat-dog.zip
     - name: show dir
       run: ls -la cat-dog
 
