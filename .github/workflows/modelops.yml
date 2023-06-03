@@ -19,11 +19,11 @@ jobs:
     - name: install unzip 
       run: apt-get install unzip
     - name: Download model
-      run: wget -O car-truck-resnet.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/car-truck-resnet.zip?alt=media&token=d0a593c0-578b-4429-99a4-23b629b56545
+      run: wget -O cat-dog-model.zip https://firebasestorage.googleapis.com/v0/b/nocode-app-ai.appspot.com/o/cat-dog.zip?alt=media&token=cfd82025-2d27-40ae-947d-6302e389dc49
     - name: extract model
-      run: unzip car-truck-resnet.zip
+      run: unzip cat-dog-model.zip
     - name: show dir
-      run: ls -la car-truck-resnet
+      run: ls -la cat-dog-model
 
     - name: docker login
       env:
