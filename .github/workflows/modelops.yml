@@ -17,7 +17,7 @@ jobs:
     - name: hello-world
       run: echo "hello world workflows …"
     - name: install unzip 
-      run: apt-get install unzip
+      run: sudo apt-get install unzip
     - name: Download model
       run: wget -O cat-dog.zip https://firebasestorage.googleapis.com/v0/b/adsoft-upload-blob.appspot.com/o/catdog-model.zip?alt=media&token=f094ab7e-9b09-4993-8496-f3448d232ec1
     - name: extract model
