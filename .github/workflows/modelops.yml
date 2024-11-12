@@ -10,7 +10,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-#    container: adsoft/aiops:latest
+    container: adsoft/aiops:latest
 
     steps:
     - uses: actions/checkout@v2
@@ -18,8 +18,6 @@ jobs:
       run: echo "hello world workflows …"
     - name: show python version 
       run: python --version
-    - name: install modules
-      run: pip install -r requirements.txt
     - name: show dir
       run: ls -la 
     - name: execute model
