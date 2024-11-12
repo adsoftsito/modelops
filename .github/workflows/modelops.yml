@@ -18,10 +18,10 @@ jobs:
       run: echo "hello world workflows …"
     - name: show python version 
       run: python --version
-    - name: show dir
-      run: ls -la 
     - name: execute model
       run: python linear-model.py
+    - name: show dir
+      run: ls -la 
 
     - name: docker login
       env:
