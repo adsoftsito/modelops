@@ -23,7 +23,7 @@ jobs:
     - name: show dir
       run: ls -la 
     - name: execute model
-      run: python linear_model.py
+      run: python linear-model.py
 
     - name: docker login
       env:
