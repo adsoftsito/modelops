@@ -16,14 +16,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: hello-world
       run: echo "hello world workflows …"
-    - name: install unzip 
-      run: sudo apt-get install unzip
-    - name: Download model
-      run: wget -O cat-dog.zip https://firebasestorage.googleapis.com/v0/b/adsoft-upload-blob.appspot.com/o/catdog-model.zip?alt=media&token=f094ab7e-9b09-4993-8496-f3448d232ec1
-    - name: extract model
-      run: unzip cat-dog.zip
+    - name: show python version 
+      run: python --version
+    - name: install modules
+      run: pip install -r requirements.txt
     - name: show dir
-      run: ls -la catdog-model
+      run: ls -la 
+    - name: execute model
+      run: python linear_model.py
 
     - name: docker login
       env:
@@ -45,32 +45,5 @@ jobs:
     - name: Docker Push 
       run: docker push ${{secrets.DOCKER_USER}}/tensorflow-${{secrets.MODEL_NAME}}:${{ github.sha }}
 
-    - name: update docker user in k8 
-      run: sed -i 's/{docker_user}/${{secrets.DOCKER_USER}}/g' manifests/linear_model_k8s.yaml
-
-    - name: update model name in k8 
-      run: sed -i 's/{model_name}/${{secrets.MODEL_NAME}}/g' manifests/linear_model_k8s.yaml
-
-    - name: update _ by - 
-      run: sed -i 's/_/-/g' manifests/linear_model_k8s.yaml
-
-    - name: update sha in k8
-      run: sed -i 's/{github.sha}/${{ github.sha }}/g' manifests/linear_model_k8s.yaml
-
-    - name: list  
-      run: cat manifests/linear_model_k8s.yaml
-
-    - uses: okteto/context@2.7.0
-      with:
-        token: ${{secrets.OKTETO_TOKEN }}
-
-    - name: Deploy and Wait
-      uses: okteto/actions/deploy@v1
-      env:
-        KUBECONFIG: ${{ steps.namespace.outputs.kubeconfig }}
-      with:
-        namespace: ${{secrets.OKTETO_NAMESPACE }}
-        manifest: manifests/linear_model_k8s.yaml
-        tag: ${{ secrets.DOCKER_USERNAME }}/tensorflow_${{secrets.MODEL_NAME}}:${{ github.sha }}
 
 
