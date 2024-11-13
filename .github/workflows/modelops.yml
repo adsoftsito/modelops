@@ -1,4 +1,4 @@
-name: Modelops deploy
+name: Modelops deploy test
 
 on:
   push:
