@@ -30,6 +30,8 @@ train_labels = []
 train_images = []
 
 size = 64,64
+print('folders')
+print(folders)
 
 for folder in folders:
     for file in os.listdir(os.path.join(data,folder)):
