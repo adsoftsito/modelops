@@ -19,7 +19,7 @@ jobs:
     - name: show python version 
       run: python --version
     - name: execute model
-      run: python linear-model.py
+      run: python flower-model.py
     - name: show dir
       run: ls -la 
 
