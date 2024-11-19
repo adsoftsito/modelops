@@ -84,3 +84,6 @@ model.compile(optimizer=Adam(learning_rate=0.001),
               metrics=['accuracy'])
 
 model.fit(train,labels, epochs=5)
+
+export_path = 'flower-model/1/'
+tf.saved_model.save(model, os.path.join('./',export_path))
