@@ -1,4 +1,5 @@
-tensorflow==2.8.0
-keras==2.8.0rc
-numpy==2.0
-protobuf===3.9.2
+#tensorflow==2.8.0
+#keras==2.8.0rc
+#numpy==2.0
+#protobuf===3.9.2
+cv2
