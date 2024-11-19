@@ -17,7 +17,7 @@ jobs:
     - name: hello-world
       run: echo "hello world workflows …"
     - name: show python version 
-      run: python --version
+      run: pip install -r requirements.txt
     - name: execute model
       run: python flowers-model.py
     - name: show dir
