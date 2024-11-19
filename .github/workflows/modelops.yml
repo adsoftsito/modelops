@@ -21,7 +21,7 @@ jobs:
     - name: execute model
       run: python flowers-model.py
     - name: show dir
-      run: ls -la 
+      run: ls -la flowers-model
 
     - name: docker login
       env:
